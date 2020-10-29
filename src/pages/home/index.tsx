@@ -9,22 +9,25 @@ import { VeryLargeText } from '../../styleds/text';
 
 interface IProps {
     project_data: projectType[],
-    groupName: String
+    groupName: String,
+    loading: boolean
 }
  
-const ProjectGroup = ({ project_data, groupName }: IProps): React.ReactElement => {
+const ProjectGroup = (props: IProps): React.ReactElement => {
 
     // console.log(project_data);
+    // console.log(loading);
 
     return (
         <ProjectBox className='project-box'> 
-            <VeryLargeText className='group-name'><b>{groupName}</b></VeryLargeText>
+            <VeryLargeText className='group-name'><b>{props.groupName}</b></VeryLargeText>
             <div className='project-list'>
                 {
-                    project_data?.map(project => (
+                    props.project_data?.map(project => (
                         <a key={project.id} href={`${project.path}`} target='_blank' rel="noopener noreferrer">
                             <ProjectCard
                                 title={`${project.name}`} 
+                                loading={props.loading}
                                 hoverable
                             // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
                             >
@@ -41,12 +44,14 @@ const ProjectGroup = ({ project_data, groupName }: IProps): React.ReactElement =
 const Home = (): React.ReactElement => {  
 
     const [projectData, setProject] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => { 
         axios.get(`${process.env.REACT_APP_LOCAL}/project/`)
         .then(data => {
             // console.log(data);
             setProject(data.data);
+            setLoading(false);
         });
     }, []);
 
@@ -54,7 +59,7 @@ const Home = (): React.ReactElement => {
 
     return (
         <HomeContainer>
-            <ProjectGroup groupName='My Projects' project_data={projectData} />  
+            <ProjectGroup groupName='My Projects' project_data={projectData} loading={loading} />  
         </HomeContainer>
     );
 }

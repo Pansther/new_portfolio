@@ -3,5 +3,6 @@ export interface projectType {
     name: String,
     img: String,
     content: String,
-    path: String
+    path: String,
+    complete: boolean
 }
