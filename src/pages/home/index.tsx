@@ -21,7 +21,7 @@ function getColorClass(isComplete: Boolean) {
   
 const Project = (project: projectType): React.ReactElement => { 
     return (
-        <a key={project.id} href={`${project.path}`} target='_blank' rel="noopener noreferrer">
+        <a href={`${project.path}`} target='_blank' rel="noopener noreferrer">
             <ProjectCard
                 title={`${project.name}`} 
                 hoverable
@@ -62,17 +62,15 @@ const ProjectSkeleton = (): React.ReactElement => {
     return (
         <>
             {
-                createMockupData(4, 8).map(project => (
-                    <a key={project.id} href={`${project.path}`} target='_blank' rel="noopener noreferrer">
-                        <ProjectCard
-                            title={<div className='h-5 w-24 bg-gray-200 animate-pulse'></div>}
-                            hoverable
-                            // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
-                            cover={<div className='h-56 w-full bg-gray-200 animate-pulse'></div>}
-                        > 
-                            <Skeleton paragraph={{ rows: 4 }} className='animate-pulse'></Skeleton>
-                        </ProjectCard>
-                    </a>
+                createMockupData(4, 8).map(project => ( 
+                    <ProjectCard
+                        title={<div className='h-5 w-24 bg-gray-200 animate-pulse'></div>}
+                        hoverable
+                        // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
+                        cover={<div className='h-56 w-full bg-gray-200 animate-pulse'></div>}
+                    > 
+                        <Skeleton paragraph={{ rows: 4 }} className='animate-pulse'></Skeleton>
+                    </ProjectCard> 
                 ))
             }
         </>
@@ -93,7 +91,7 @@ const ProjectGroup = (props: IProps): React.ReactElement => {
                         <ProjectSkeleton />
                     :
                     props.project_data?.map(project => (
-                        <Project { ...project } />
+                        <Project key={project.id} { ...project } />
                     ))   
                 }
             </div>
