@@ -108,8 +108,13 @@ const Home = (): React.ReactElement => {
         axios.get(`${process.env.REACT_APP_LOCAL}/project/`)
         .then(data => {
             // console.log(data);
-            setProject(data.data);
-            setLoading(false);
+            setTimeout(() => {
+                setProject(data.data);
+                setLoading(false);
+            }, 600);
+        })
+        .catch(err => {
+            console.log(err);
         });
     }, []);
 
