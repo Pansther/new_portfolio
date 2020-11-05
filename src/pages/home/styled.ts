@@ -32,12 +32,21 @@ export const ProjectBox = styled.div`
         flex-flow: row wrap;
         justify-content: center;
         padding-bottom: 15px;
+
+        p {
+            font-family: 'Mitr', sans-serif; 
+        }
     }
 `;
 
 export const ProjectCard = styled(Card)`
     width: 300px; 
-    height: 450px;
+    height: 500px;
 
     margin: 15px 7.5px 0 7.5px;
+
+    .ant-card-body {
+        padding: 20px;
+        padding-top: 5px;
+    }
 `;

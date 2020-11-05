@@ -4,9 +4,9 @@ import axios from 'axios';
 import { projectType } from '../../types/project';
 
 import { HomeContainer, ProjectBox, ProjectCard } from './styled';
-// import { HomeContainer, ProjectCover } from './styled';
+// import { ProjectCover } from './styled';
 import { VeryLargeText } from '../../styleds/text';
-
+ 
 interface IProps {
     project_data: projectType[],
     groupName: String,
@@ -18,6 +18,11 @@ const ProjectGroup = (props: IProps): React.ReactElement => {
     // console.log(project_data);
     // console.log(loading);
 
+    /// get project status and return tailwindcss color class.
+    const getColorClass = (isComplete: Boolean) => {
+        return isComplete ? 'bg-green-400' : 'bg-red-400';
+    };
+  
     return (
         <ProjectBox className='project-box'> 
             <VeryLargeText className='group-name'><b>{props.groupName}</b></VeryLargeText>
@@ -29,14 +34,19 @@ const ProjectGroup = (props: IProps): React.ReactElement => {
                                 title={`${project.name}`} 
                                 loading={props.loading}
                                 hoverable
-                            // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
-                            >
-                                <p>{project.content}</p>
+                                // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
+                                cover={<div className='project-test-cover h-56 w-full bg-blue-200'></div>}
+                            > 
+                                <div className='project-status-box overflow-auto flex items-center'>
+                                    <div className={`project-status h-3 w-3 rounded-full p-0 my-3 ${getColorClass(project.complete)}`}></div>
+                                    <p className='p-0 ml-3 flex-baseline'>{`${project.complete ? 'Completed' : 'In Progress'}`}</p>
+                                    </div>
+                                <p className='break-all font-light'>{project.content}</p>
                             </ProjectCard>
                         </a>
                     ))
                 } 
-            </div>
+            </div>  
         </ProjectBox>
     );
 }
