@@ -7,6 +7,8 @@ import {
 
 import Home from './pages/home';
 
+import Footer from './components/footer';
+
 import './App.css'; 
 import './main.css';
 
@@ -20,6 +22,9 @@ const App = (): React.ReactElement => {
         </Route>
 
       </Switch>
+
+      <Footer />
+
     </Router>
   );
 }

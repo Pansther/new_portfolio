@@ -12,7 +12,7 @@ export const ProjectBox = styled.div`
 
     display: flex;
     flex-flow: column wrap;    
-    margin-top: 15px; 
+    /* margin-top: 15px;  */
 
     .project-list {
         /* background: lightblue; */
@@ -20,7 +20,7 @@ export const ProjectBox = styled.div`
 
         display: flex;
         flex-flow: row wrap;  
-        padding-bottom: 15px; 
+        /* padding-bottom: 15px;  */
 
         p {
             font-family: 'Mitr', sans-serif; 

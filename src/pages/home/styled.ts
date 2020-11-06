@@ -12,6 +12,10 @@ export const HomeCoverBox = styled.div`
     justify-content: center; 
 
     .cover-box {
-        height: 24rem;
+        height: 18rem;
+        
+        @media (min-width: 640px) {
+            height: 28rem;
+        }
     }
 `;

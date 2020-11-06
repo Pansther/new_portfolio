@@ -60,8 +60,9 @@ const ProjectSkeleton = (): React.ReactElement => {
     return (
         <>
             {
-                createMockupData(4, 8).map(() => ( 
+                createMockupData(4, 8).map(project => ( 
                     <ProjectCard
+                        key={project.id}
                         title={<div className='h-5 w-24 bg-gray-200 animate-pulse'></div>}
                         hoverable
                         // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
@@ -83,7 +84,7 @@ const ProjectGroup = (props: IProps): React.ReactElement => {
     return (  
         <ProjectBox className='project-box'>
             <VeryLargeText className='group-name text-center'><b>{props.groupName}</b></VeryLargeText>
-            <div className='project-list justify-center my-0 mx-auto'>
+            <div className='project-list justify-center mt-0 mb-4 mx-auto'>
                 {
                     props.loading ?  
                         <ProjectSkeleton />
