@@ -8,21 +8,19 @@ export const ProjectCover = styled.img`
 
 export const ProjectBox = styled.div`
     /* background: pink; */
-    width: 90%;
-    height: 500px;
+    width: 100%; 
 
     display: flex;
-    flex-flow: row wrap; 
-    justify-content: center; 
+    flex-flow: column wrap;    
+    margin-top: 15px; 
 
     .project-list {
         /* background: lightblue; */
-        width: 100%;
+        width: 90%;
 
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        padding-bottom: 15px;
+        flex-flow: row wrap;  
+        padding-bottom: 15px; 
 
         p {
             font-family: 'Mitr', sans-serif; 

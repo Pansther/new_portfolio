@@ -3,7 +3,7 @@ import { Skeleton } from 'antd';
 
 import { projectType } from '../../types/project';
 
-import { ProjectBox, ProjectCard } from '../../styleds/project';
+import { ProjectBox, ProjectCard } from './styled';
 // import { ProjectCover } from './styled';
 import { VeryLargeText } from '../../styleds/text';
 
@@ -77,13 +77,13 @@ const ProjectSkeleton = (): React.ReactElement => {
 
 const ProjectGroup = (props: IProps): React.ReactElement => {
 
-// console.log(project_data);
-// console.log(loading);
+    // console.log(project_data);
+    // console.log(loading);
  
     return (  
         <ProjectBox className='project-box'>
-            <VeryLargeText className='group-name'><b>{props.groupName}</b></VeryLargeText>
-            <div className='project-list'>
+            <VeryLargeText className='group-name text-center'><b>{props.groupName}</b></VeryLargeText>
+            <div className='project-list justify-center my-0 mx-auto'>
                 {
                     props.loading ?  
                         <ProjectSkeleton />
