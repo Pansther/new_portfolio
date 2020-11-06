@@ -4,7 +4,7 @@ import { Skeleton } from 'antd';
 import { projectType } from '../../types/project';
 
 import { ProjectBox, ProjectCard } from './styled';
-// import { ProjectCover } from './styled';
+import { ProjectCover } from './styled';
 import { VeryLargeText } from '../../styleds/text';
 
 interface IProps {
@@ -17,14 +17,16 @@ function getColorClass(isComplete: Boolean) {
     return isComplete ? 'bg-green-400' : 'bg-red-400';
 };
 
-const Project = (project: projectType): React.ReactElement => { 
+const Project = (project: projectType): React.ReactElement => {  
     return (
         <a href={`${project.path}`} target='_blank' rel="noopener noreferrer">
             <ProjectCard
-                title={`${project.name}`} 
+                className='shadow-md'
+                title={<b>{`${project.name}`}</b>} 
                 hoverable
                 // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
-                cover={<div className='project-test-cover h-56 w-full bg-blue-200'></div>}
+                cover={<ProjectCover alt='cover' src={`http://localhost:8080/uploads/image/project-${project.id}.png`} />}
+                // cover={<div className='project-test-cover h-56 w-full bg-blue-200'></div>}
             >
                 <div className='project-status-box flex items-center'>
                     <div className={`project-status h-3 w-3 rounded-full p-0 my-3 ${getColorClass(project.complete)}`}></div>

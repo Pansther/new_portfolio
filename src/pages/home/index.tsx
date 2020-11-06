@@ -32,6 +32,7 @@ const Home = (): React.ReactElement => {
         <HomeContainer>
             <HomeCover />
             <ProjectGroup groupName='My Projects' project_data={projectData} loading={loading} />  
+            {/* <ProjectGroup groupName='Participant Activity' project_data={[]} loading={loading} />   */}
         </HomeContainer>
     );
 }

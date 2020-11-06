@@ -20,3 +20,7 @@ export const LargeText = styled(ImprovedP)`
 export const VeryLargeText = styled(ImprovedP)`
     font-size: 28px; 
 `;
+
+export const VeryLargeText2 = styled(ImprovedP)`
+    font-size: 56px; 
+`;
