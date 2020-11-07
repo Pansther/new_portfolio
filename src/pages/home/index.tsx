@@ -3,8 +3,9 @@ import axios from 'axios';
 
 import { HomeContainer } from './styled';
 
-import ProjectGroup from '../../components/project';
 import HomeCover from './cover';
+import ProjectGroup from '../../components/project';
+import ContactGroup from '../../components/contact';
 
 const Home = (): React.ReactElement => {  
 
@@ -31,6 +32,7 @@ const Home = (): React.ReactElement => {
     return (
         <HomeContainer>
             <HomeCover />
+            <ContactGroup />
             <ProjectGroup groupName='My Projects' project_data={projectData} loading={loading} />  
             {/* <ProjectGroup groupName='Participant Activity' project_data={[]} loading={loading} />   */}
         </HomeContainer>

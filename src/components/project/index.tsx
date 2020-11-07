@@ -4,8 +4,7 @@ import { Skeleton } from 'antd';
 import { projectType } from '../../types/project';
 
 import { ProjectBox, ProjectCard } from './styled';
-import { ProjectCover } from './styled';
-import { VeryLargeText } from '../../styleds/text';
+import { ProjectCover } from './styled'; 
 
 interface IProps {
     project_data: projectType[],
@@ -84,8 +83,8 @@ const ProjectGroup = (props: IProps): React.ReactElement => {
     // console.log(loading);
  
     return (  
-        <ProjectBox className='project-box'>
-            <VeryLargeText className='group-name text-center'><b>{props.groupName}</b></VeryLargeText>
+        <ProjectBox className='project-box my-4'>
+            <p className='group-name text-center text-4xl'><b>{props.groupName}</b></p>
             <div className='project-list justify-center mt-0 mb-4 mx-auto'>
                 {
                     props.loading ?  
