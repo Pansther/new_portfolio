@@ -17,9 +17,26 @@ export const HomeCoverBox = styled.div`
             height: 28rem;
         }  
 
-        .text-box {
+        .cover-border {  
+            @media (min-width: 768px) {
+                border: 15px white solid; 
+                position: absolute;
+
+                width: 95%;
+                height: 40%;
+            }
+        }
+
+        .text-box { 
             p {
-                text-shadow: 2px 2px 4px #666666;
+                text-shadow: 2px 2px 4px #666666; 
+
+                border-top: 15px white solid;  
+                border-bottom: 15px white solid;  
+
+                @media (min-width: 768px) { 
+                    border: none;
+                }
             }
         }
         
