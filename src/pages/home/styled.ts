@@ -2,7 +2,7 @@ import styled from 'styled-components';
  
 export const HomeContainer = styled.div`
     display: flex;
-    flex-flow: column wrap; 
+    flex-flow: column nowrap; 
     justify-content: center;
 `; 
 
@@ -23,7 +23,7 @@ export const HomeCoverBox = styled.div`
                 position: absolute;
 
                 width: 95%;
-                height: 40%;
+                height: 22rem;
             }
         }
 

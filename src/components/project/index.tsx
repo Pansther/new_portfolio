@@ -83,17 +83,17 @@ const ProjectGroup = (props: IProps): React.ReactElement => {
     // console.log(loading);
  
     return (  
-        <ProjectBox className='project-box my-4'>
+        <ProjectBox className='project-box'>
             <p className='group-name text-center text-4xl'><b>{props.groupName}</b></p>
             <div className='project-list justify-center mt-0 mb-4 mx-auto'>
                 {
                     props.loading ?  
                         <ProjectSkeleton />
                     :
-                    props.project_data?.map(project => (
+                    props?.project_data?.map(project => (
                         <Project key={project.id} { ...project } />
-                    ))   
-                }
+                    ))    
+                } 
             </div>
         </ProjectBox> 
     );
