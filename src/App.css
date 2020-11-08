@@ -3,6 +3,18 @@
 * {
   font-family: 'Quicksand', sans-serif;
 }
+ 
+.ant-message-success svg {  
+  margin-top: -50%;
+}
+ 
+.ant-message-error svg {  
+  margin-top: -50%;
+}
+ 
+.ant-message-warning svg {  
+  margin-top: -50%;
+}
 
 /* width */
 ::-webkit-scrollbar {
