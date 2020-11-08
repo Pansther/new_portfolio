@@ -27,8 +27,9 @@ export const ProjectCard = styled(Card)`
     width: 300px; 
     height: 500px;
     border: 1px solid #e5e5e5;
+    border-radius: 5px;
 
-    margin: 15px 7.5px 0 7.5px;
+    margin: 20px 15px 0 15px;
   
     .ant-card-body {
         padding: 20px;
