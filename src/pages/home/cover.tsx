@@ -5,7 +5,7 @@ import { HomeCoverBox } from './styled';
 const HomeCover = (): React.ReactElement => {
     return (
         <HomeCoverBox>
-            <div className='cover-container flex min-h-full w-full my-0 mx-auto w-full bg-blue-400 bg-opacity-100 shadow-md justify-center'>
+            <div className='cover-container flex min-h-full w-full my-0 mx-auto w-full bg-gray-800 bg-opacity-100 shadow-md justify-center'>
                 <div className='cover-box flex w-full sm:w-10/12 lg:w-8/12 flex-col md:flex-row justify-center'>
                     <div className='cover-border self-center my-0'></div>
                     <div className='text-box flex my-0 mx-auto md:w-5/12 h-56 md:h-full items-center text-center'>
