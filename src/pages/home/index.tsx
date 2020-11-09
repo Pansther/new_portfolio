@@ -7,30 +7,39 @@ import { HomeContainer } from './styled';
 import HomeCover from './cover';
 import ProjectGroup from '../../components/project';
 import ContactGroup from '../../components/contact';
+import SkillGroup from '../../components/skill_group';
 
 const { TabPane } = Tabs;
 
 const Home = (): React.ReactElement => {  
 
     const [projectData, setProject] = React.useState([]);
+    const [skillData, setSkill] =  React.useState([]);
     const [loading, setLoading] = React.useState(true); 
 
-    React.useEffect(() => { 
-        axios.get(`${process.env.REACT_APP_LOCAL}/project/`)
+    React.useEffect(() => {  
+
+        Promise.all([
+            axios.get(`${process.env.REACT_APP_LOCAL}/project/`),
+            axios.get(`${process.env.REACT_APP_LOCAL}/skill/`)
+        ])
         .then(data => {
-            // console.log(data);
-            /// set delay for show project skeleton.
+
             setTimeout(() => {
-                setProject(data.data);
+                setProject(data[0].data);
+                setSkill(data[1].data);
                 setLoading(false);
-            }, 600);
+            }, 600); 
+
         })
         .catch(err => {
             console.log(err);
         });
+
     }, []);
 
     // console.log(projectData);
+    // console.log(skillData);
 
     function useTabPane (tabName: string, tabKey: number, Component: React.ReactElement) {
         return (
@@ -41,14 +50,14 @@ const Home = (): React.ReactElement => {
     }
 
     const ProjectTab = useTabPane('My Projects', 1, <ProjectGroup groupName='My Projects' project_data={projectData} loading={loading} />);
-    const AboutTab = useTabPane('About Me', 2, <></>);
+    const AboutTab = useTabPane('About Me', 2, <SkillGroup skillData={skillData} />);
     
     return (
         <HomeContainer>
             <HomeCover />
             <ContactGroup />
 
-            <Tabs defaultActiveKey="1" type="card" centered>
+            <Tabs defaultActiveKey="2" type="card" centered>
                 { ProjectTab }
                 { AboutTab }
             </Tabs>
