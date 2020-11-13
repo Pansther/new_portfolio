@@ -8,6 +8,8 @@ import HomeCover from './cover';
 import ProjectGroup from '../../components/project';
 import ContactGroup from '../../components/contact';
 import SkillGroup from '../../components/skill_group';
+import EducationGroup from '../../components/education'; 
+import { getProject, getSkill } from '../../api/getData';
 
 const { TabPane } = Tabs;
 
@@ -20,8 +22,8 @@ const Home = (): React.ReactElement => {
     React.useEffect(() => {  
 
         Promise.all([
-            axios.get(`${process.env.REACT_APP_LOCAL}/project/`),
-            axios.get(`${process.env.REACT_APP_LOCAL}/skill/`)
+            axios.get(getProject),
+            axios.get(getSkill)
         ])
         .then(data => {
 
@@ -50,7 +52,12 @@ const Home = (): React.ReactElement => {
     }
 
     const ProjectTab = useTabPane('My Projects', 1, <ProjectGroup groupName='My Projects' project_data={projectData} loading={loading} />);
-    const AboutTab = useTabPane('About Me', 2, <SkillGroup skillData={skillData} />);
+    const AboutTab = useTabPane('About Me', 2, 
+        <>
+            <EducationGroup />
+            <SkillGroup skillData={skillData} />
+        </>
+    ); 
     
     return (
         <HomeContainer>

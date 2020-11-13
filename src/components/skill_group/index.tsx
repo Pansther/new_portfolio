@@ -47,7 +47,7 @@ const Skill = (skill: skillType): React.ReactElement => {
             alt={skill.name}
             // src={skill.img}
             src={`http://localhost:8080/uploads/image/${skill.name.toLocaleLowerCase()}.png`}
-        />, 
+        />
     );  
 
     return ( 
