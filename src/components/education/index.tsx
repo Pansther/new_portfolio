@@ -27,7 +27,7 @@ const EducationGroup = (): React.ReactElement => {
                 <Steps 
                     className='w-9/12 sm:w-auto my-5' 
                     direction="vertical" 
-                    current={1} 
+                    current={0} 
                 >
                     {
                         educateData?.map((educate: educationType) => (
