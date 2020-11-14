@@ -61,7 +61,7 @@ const Skill = (skill: skillType): React.ReactElement => {
 const SkillGroup = (props: IProps): React.ReactElement => {
     return (
         <SkillContainer className='flex flex-col'>
-            <p className='skill-group-name text-center text-4xl'><b>Skills</b></p>
+            <p className='skill-group-name text-center text-4xl text-blue-500'><b>Skills</b></p>
             <div className='skill-list flex flex-row flex-wrap justify-center mt-0 mb-4 mx-auto'>
                 {
                     props?.skillData?.map(skill => (

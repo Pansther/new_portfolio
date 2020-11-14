@@ -84,7 +84,7 @@ const ProjectGroup = (props: IProps): React.ReactElement => {
  
     return (  
         <ProjectBox className='project-box'>
-            <p className='group-name text-center text-4xl'><b>{props.groupName}</b></p>
+            <p className='group-name text-center text-4xl text-blue-500'><b>{props.groupName}</b></p>
             <div className='project-list justify-center mt-0 mb-4 mx-auto'>
                 {
                     props.loading ?  

@@ -65,7 +65,7 @@ const Home = (): React.ReactElement => {
             <HomeCover />
             <ContactGroup />
 
-            <Tabs defaultActiveKey="2" type="card" centered>
+            <Tabs defaultActiveKey="1" type="card" centered>
                 { ProjectTab }
                 { AboutTab }
             </Tabs>

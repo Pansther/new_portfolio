@@ -26,7 +26,7 @@ const Profile = (): React.ReactElement => {
 
     return (
         <ProfileBox className='profile-container flex-col justify-center'>
-            <p className='profile-name text-center text-4xl'><b>Profile</b></p> 
+            <p className='profile-name text-center text-4xl text-blue-500'><b>Profile</b></p> 
             <div className='profile-box flex justify-center pt-2'>
                 <Typography className='flex justify-center w-10/12'>
                     <Paragraph className='text-lg sm:text-2xl break-all'>
