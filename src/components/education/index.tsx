@@ -22,7 +22,7 @@ const EducationGroup = (): React.ReactElement => {
 
     return (
         <EducationBox className='education-container flex flex-col justify-center'>
-            <p className='education-group-name text-center text-4xl'><b>Education</b></p> 
+            <p className='education-group-name text-center text-4xl text-blue-500'><b>Education</b></p> 
             <div className='education-box flex justify-center'>
                 <Steps 
                     className='w-9/12 sm:w-auto my-5' 
