@@ -10,6 +10,7 @@ import ContactGroup from '../../components/contact';
 import SkillGroup from '../../components/skill_group';
 import EducationGroup from '../../components/education'; 
 import { getProject, getSkill } from '../../api/getData';
+import Profile from '../../components/profile';
 
 const { TabPane } = Tabs;
 
@@ -27,12 +28,11 @@ const Home = (): React.ReactElement => {
         ])
         .then(data => {
 
+            setSkill(data[1].data);
             setTimeout(() => {
-                setProject(data[0].data);
-                setSkill(data[1].data);
+                setProject(data[0].data); 
                 setLoading(false);
             }, 600); 
-
         })
         .catch(err => {
             console.log(err);
@@ -54,6 +54,7 @@ const Home = (): React.ReactElement => {
     const ProjectTab = useTabPane('My Projects', 1, <ProjectGroup groupName='My Projects' project_data={projectData} loading={loading} />);
     const AboutTab = useTabPane('About Me', 2, 
         <>
+            <Profile />
             <EducationGroup />
             <SkillGroup skillData={skillData} />
         </>
