@@ -5,27 +5,14 @@ import { EducationBox } from './styled';
 
 import { educationType } from '../../types/education';
 import { getEducation } from '../../api/getData';
-
-const EducationStep = (props: educationType): React.ReactElement => {
-
-    const { Step } = Steps;
-
-    return (
-        <Step
-            title={props.name}
-            description={props.content}
-        />
-    );
-}
-
+  
 const EducationGroup = (): React.ReactElement => {
 
     const [educateData, setEducate] = React.useState([]);
 
     React.useEffect(() => {
         axios.get(getEducation)
-        .then(data => {
-            console.log(getEducation);
+        .then(data => {  
             setEducate(data.data);
         })
         .catch(err => {
@@ -36,11 +23,22 @@ const EducationGroup = (): React.ReactElement => {
     return (
         <EducationBox className='education-container flex flex-col justify-center'>
             <p className='education-group-name text-center text-4xl'><b>Education</b></p> 
-            <div className='education-box'>
-                <Steps direction="vertical" current={1}>
+            <div className='education-box flex justify-center'>
+                <Steps 
+                    className='w-9/12 sm:w-auto my-5' 
+                    direction="vertical" 
+                    current={1} 
+                >
                     {
-                        educateData?.map(educate => (
-                            <EducationStep { ...educate } />
+                        educateData?.map((educate: educationType) => (
+                            <Steps.Step
+                                className='font-mitr font-light'
+                                title={<p className='text-lg sm:text-xl'>{educate.name}</p>} 
+                                description={educate.content} 
+                                // icon={<img src={educate.img} alt={`${educate.name}-img`} />}
+                                icon={<img src='http://localhost:8080/uploads/image/apw_log.png' alt={''} />}
+                                
+                            />
                         ))
                     }
                 </Steps>
