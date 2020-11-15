@@ -12,8 +12,8 @@ const HomeCover = (): React.ReactElement => {
                         <p className='text-5xl sm:text-6xl xl:text-7xl text-white'><b>Werawit Sirakunwat</b></p>  
                     </div>
                     <div className='profile-img-box flex w-full md:w-7/12 z-10 items-end justify-center'>
-                        {/* <img className='profile-img w-full h-56 md:h-full bg-blue-200' src='https://werawit.s3.amazonaws.com/my_port/profile.png' alt='profile-img' /> */}
-                        <img className='profile-img lg:h-64 xl:h-full' src='http://localhost:8080/uploads/image/profile-2.png' alt='profile-img' />
+                        <img className='profile-img lg:h-64 xl:h-full' src='https://werawit.s3.amazonaws.com/my_port/profile-2.png' alt='profile-img' />
+                        {/* <img className='profile-img lg:h-64 xl:h-full' src='http://localhost:8080/uploads/image/profile-2.png' alt='profile-img' /> */}
                     </div>
                 </div>
             </div>

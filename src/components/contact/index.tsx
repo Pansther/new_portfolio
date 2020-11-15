@@ -65,13 +65,17 @@ const Contact = (contact: contactType): React.ReactElement => {
                 target={contact.path ? '_blank' : '_self'} 
                 rel="noopener noreferrer"
                 onClick={contact.path ? () => {} : () => clipboardDisplay(`${contact.text}`)}
-            >
-                {/* <img src={contact.img} alt={contact.name} /> */}
+            > 
                 <img
+                    className='my-8 mx-3 w-12 h-12 sm:w-16 sm:h-16 rounded-full'
+                    src={contact.img}
+                    alt={contact.name}
+                />
+                {/* <img
                     className='my-8 mx-3 w-12 h-12 sm:w-16 sm:h-16 rounded-full'
                     src={`http://localhost:8080/uploads/image/${contact.name.toLowerCase()}.png`}
                     alt={contact.name}
-                />
+                /> */}
             </a>
         </div>
     );

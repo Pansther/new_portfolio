@@ -23,8 +23,8 @@ const Project = (project: projectType): React.ReactElement => {
                 className='shadow-md'
                 title={<b>{`${project.name}`}</b>} 
                 hoverable
-                // cover={<ProjectCover alt='cover' src={`${project.img}`} />}
-                cover={<ProjectCover alt='cover' src={`http://localhost:8080/uploads/image/project-${project.id}.png`} />}
+                cover={<ProjectCover alt='cover' src={`${project.img}`} />}
+                // cover={<ProjectCover alt='cover' src={`http://localhost:8080/uploads/image/project-${project.id}.png`} />}
                 // cover={<div className='project-test-cover h-56 w-full bg-blue-200'></div>}
             >
                 <div className='project-status-box flex items-center'>

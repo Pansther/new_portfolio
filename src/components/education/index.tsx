@@ -35,8 +35,8 @@ const EducationGroup = (): React.ReactElement => {
                                 className='font-mitr font-light'
                                 title={<p className='text-lg sm:text-xl'>{educate.name}</p>} 
                                 description={educate.content} 
-                                // icon={<img src={educate.img} alt={`${educate.name}-img`} />}
-                                icon={<img src='http://localhost:8080/uploads/image/apw_log.png' alt={''} />}
+                                icon={<img src={educate.img} alt={`${educate.name}-img`} />}
+                                // icon={<img src='http://localhost:8080/uploads/image/apw_log.png' alt={''} />}
                                 
                             />
                         ))

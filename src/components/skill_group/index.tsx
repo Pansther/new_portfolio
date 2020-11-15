@@ -45,8 +45,8 @@ const Skill = (skill: skillType): React.ReactElement => {
         <img 
             className='flex justify-center items-center rounded-md w-32 h-32 border-2 border-gray-400 shadow-md'  
             alt={skill.name}
-            // src={skill.img}
-            src={`http://localhost:8080/uploads/image/${skill.name.toLocaleLowerCase()}.png`}
+            src={skill.img}
+            // src={`http://localhost:8080/uploads/image/${skill.name.toLocaleLowerCase()}.png`}
         />
     );  
 
